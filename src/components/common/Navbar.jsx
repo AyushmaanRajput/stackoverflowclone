@@ -1,16 +1,19 @@
 import { Button, Flex, Heading, Toast, useToast } from "@chakra-ui/react";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { RESET } from "../../redux/auth/actionTypes";
 
 export const Navbar = () => {
   const isAuth = useSelector((store) => store.authReducer.isAuth);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const toast = useToast();
 
   function handleLogout() {
     localStorage.removeItem("userId");
+    navigate("/login");
     dispatch({ type: RESET });
     toast({
       title: "Logged Out Successfully",
