@@ -26,8 +26,7 @@ export const Login = () => {
       borderRadius={"lg"}
       w="min(40rem,100%)"
       mx="auto"
-      mt={"40%"}
-      transform={"translateY(-50%)"}
+      mt={150}
     >
       <Heading mb="4">Login</Heading>
       <form onSubmit={handleSubmit}>
@@ -53,7 +52,14 @@ export const Login = () => {
             }
           />
         </FormControl>
-        <Input type="submit" width="auto" value="Login" />
+        <Input
+          type="submit"
+          width="auto"
+          value="Login"
+          bg="teal"
+          color="white"
+          mt={4}
+        />
       </form>
     </Box>
   );

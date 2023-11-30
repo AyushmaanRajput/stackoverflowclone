@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { ForumCard } from "./ForumCard";
 import { Pagination } from "../common/Pagination";
+import { Box } from "@chakra-ui/react";
 
 export const Forums = ({ page, setPage }) => {
   const { isLoading, isError, forums } = useSelector(
@@ -15,13 +16,13 @@ export const Forums = ({ page, setPage }) => {
     return <h1>Something went wrong!</h1>;
   }
   return (
-    <>
+    <Box>
       {forums.length > 0 &&
         forums.map((forum, i) => {
           return <ForumCard key={i} forum={forum} />;
         })}
 
-      {forums.length > 0 && <Pagination page={page} setPage={setPage} />}
-    </>
+      
+    </Box>
   );
 };

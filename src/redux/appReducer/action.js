@@ -19,8 +19,9 @@ export const getForums = (toast, params) => async (dispatch) => {
       params: params,
     });
     // console.log(res, res.headers.get("x-total-count"));
-    const totalPages = Math.ceil(5 / res.headers.get("x-total-count"));
-    dispatch({ type: GET_FORUMS_SUCCESS, payload: [res.data,totalPages] });
+    const totalPages = Math.ceil(res.headers.get("x-total-count") / 5);
+    console.log(res.headers.get("x-total-count"), totalPages, "From action");
+    dispatch({ type: GET_FORUMS_SUCCESS, payload: [res.data, totalPages] });
   } catch (err) {
     dispatch({ type: GET_FORUMS_ERROR });
     toast({

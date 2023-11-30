@@ -21,7 +21,8 @@ export const ForumCard = ({ forum }) => {
   const toast = useToast();
   function addLikeHandler() {}
 
-  function deleteQuestionHandler() {
+  function deleteQuestionHandler(e) {
+    e.stopPropagation();
     dispatch(deleteForum(forum.id, toast));
   }
   function setCurrentToForum() {

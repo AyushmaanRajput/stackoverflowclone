@@ -110,7 +110,7 @@ export const ForumModal = () => {
                 </Select>
               </FormControl>
 
-              <Flex gap={4} justifyContent={"flex-end"}>
+              <Flex gap={4} justifyContent={"flex-end"} alignItems={"center"}>
                 <Button
                   colorScheme="teal"
                   variant={"outline"}
@@ -118,7 +118,14 @@ export const ForumModal = () => {
                 >
                   Close
                 </Button>
-                <Input colorScheme="teal" type="submit" value="Add Question" />
+                <Input
+                  colorScheme="teal"
+                  type="submit"
+                  value="Ask Question"
+                  bg="teal"
+                  color="white"
+                  w="fit-content"
+                />
               </Flex>
             </form>
           </ModalBody>

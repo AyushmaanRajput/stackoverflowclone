@@ -4,6 +4,7 @@ import { ForumModal } from "../components/forum/ForumModal";
 import { Forums } from "../components/forum/Forums";
 import { useDispatch } from "react-redux";
 import { getForums } from "../redux/appReducer/action";
+import { Pagination } from "../components/common/Pagination";
 
 export const Forum = () => {
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ export const Forum = () => {
       _page: page,
       _limit: 5,
     };
-    dispatch(getForums(toast,params));
+    dispatch(getForums(toast, params));
   }, [page]);
 
   return (
@@ -23,6 +24,7 @@ export const Forum = () => {
       <ForumModal />
       <Divider my={10} />
       <Forums page={page} setPage={setPage} />
+      <Pagination page={page} setPage={setPage} />
     </Box>
   );
 };
